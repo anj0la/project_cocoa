@@ -1,0 +1,35 @@
+[gd_scene load_steps=8 format=3 uid="uid://ck4qdbqnkqw7b"]
+
+[ext_resource type="Script" uid="uid://hbb40mwtcfa2" path="res://player/player.gd" id="1_oul6g"]
+[ext_resource type="Script" uid="uid://domb36ly5sks7" path="res://player/player_state.gd" id="2_yw30f"]
+[ext_resource type="Script" uid="uid://cme1tjxqq56o7" path="res://player/states/player_idle.gd" id="3_qjkh3"]
+[ext_resource type="Script" uid="uid://do3ti6fclws4t" path="res://player/states/player_walk.gd" id="4_g6k8r"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kqu6x"]
+albedo_color = Color(1, 0.5254902, 0.5176471, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_oul6g"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rkbax"]
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_oul6g")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_kqu6x")
+mesh = SubResource("CapsuleMesh_oul6g")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_rkbax")
+
+[node name="PlayerState" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_yw30f")
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="PlayerState"]
+script = ExtResource("3_qjkh3")
+
+[node name="Walk" type="Node" parent="PlayerState" node_paths=PackedStringArray("player")]
+script = ExtResource("4_g6k8r")
+player = NodePath("../..")
+move_speed = 5.0

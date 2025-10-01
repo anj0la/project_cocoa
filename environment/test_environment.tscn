@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://bq77mh1ih084o"]
+
+[ext_resource type="PackedScene" uid="uid://ck4qdbqnkqw7b" path="res://player/player.tscn" id="1_sbe2a"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_hcnc0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hcnc0"]
+albedo_color = Color(1, 0.5686275, 0.59607846, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_o0xcg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4bqu4"]
+albedo_color = Color(1, 0.5686275, 0.59607846, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_cx5uc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8e3g4"]
+albedo_color = Color(1, 0.7294118, 0.76862746, 1)
+
+[node name="TestEnvironment" type="Node3D"]
+
+[node name="Floor" type="CSGMesh3D" parent="."]
+transform = Transform3D(12, 0, 0, 0, 1, 0, 0, 0, 12, 0, 0, 0)
+mesh = SubResource("BoxMesh_hcnc0")
+material = SubResource("StandardMaterial3D_hcnc0")
+
+[node name="LeftPillar" type="CSGMesh3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 5, 0, 0, 0, 1, -5.502, 3, 0)
+mesh = SubResource("BoxMesh_o0xcg")
+material = SubResource("StandardMaterial3D_4bqu4")
+
+[node name="TopBeam" type="CSGMesh3D" parent="."]
+transform = Transform3D(10.957763, 0, 0, 0, 1, 0, 0, 0, 1, 0.08117473, 5, 0)
+mesh = SubResource("BoxMesh_o0xcg")
+material = SubResource("StandardMaterial3D_4bqu4")
+metadata/_edit_group_ = true
+
+[node name="RightPillar" type="CSGMesh3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 5, 0, 0, 0, 1, 5.5, 3, 0)
+mesh = SubResource("BoxMesh_o0xcg")
+material = SubResource("StandardMaterial3D_4bqu4")
+
+[node name="Sphere1" type="CSGMesh3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8198814, 0.9388552, 4.191554)
+mesh = SubResource("SphereMesh_cx5uc")
+material = SubResource("StandardMaterial3D_8e3g4")
+
+[node name="Sphere2" type="CSGMesh3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6843219, 0.9388552, -2.037653)
+mesh = SubResource("SphereMesh_cx5uc")
+material = SubResource("StandardMaterial3D_8e3g4")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.89531565, 0.4454323, 0, -0.4454323, 0.89531565, 0, 3.8995209, 5.5811143)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.9434543, 0.33150256, 0, -0.33150256, 0.9434543, 0, 5.2911887, 7.9954176)
+
+[node name="Player" parent="." instance=ExtResource("1_sbe2a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
