@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://ck4qdbqnkqw7b"]
+[gd_scene load_steps=9 format=3 uid="uid://ck4qdbqnkqw7b"]
 
 [ext_resource type="Script" uid="uid://hbb40mwtcfa2" path="res://player/player.gd" id="1_oul6g"]
-[ext_resource type="Script" uid="uid://domb36ly5sks7" path="res://player/player_state.gd" id="2_yw30f"]
-[ext_resource type="Script" uid="uid://cme1tjxqq56o7" path="res://player/states/player_idle.gd" id="3_qjkh3"]
-[ext_resource type="Script" uid="uid://do3ti6fclws4t" path="res://player/states/player_walk.gd" id="4_g6k8r"]
+[ext_resource type="Script" uid="uid://domb36ly5sks7" path="res://player/state/state.gd" id="2_yw30f"]
+[ext_resource type="Script" uid="uid://cme1tjxqq56o7" path="res://player/state/idle.gd" id="3_qjkh3"]
+[ext_resource type="Script" uid="uid://do3ti6fclws4t" path="res://player/state/walk.gd" id="4_g6k8r"]
+[ext_resource type="Script" uid="uid://b70fqnmhquddw" path="res://player/camera/pivot.gd" id="5_qjkh3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kqu6x"]
 albedo_color = Color(1, 0.5254902, 0.5176471, 1)
@@ -29,7 +30,16 @@ initial_state = NodePath("Idle")
 [node name="Idle" type="Node" parent="PlayerState"]
 script = ExtResource("3_qjkh3")
 
-[node name="Walk" type="Node" parent="PlayerState" node_paths=PackedStringArray("player")]
+[node name="Walk" type="Node" parent="PlayerState" node_paths=PackedStringArray("_player", "_camera_pivot")]
 script = ExtResource("4_g6k8r")
-player = NodePath("../..")
+_player = NodePath("../..")
+_camera_pivot = NodePath("../../CameraPivot")
 move_speed = 5.0
+
+[node name="CameraPivot" type="Node3D" parent="."]
+script = ExtResource("5_qjkh3")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CameraPivot"]
+spring_length = 3.0
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot/SpringArm3D"]

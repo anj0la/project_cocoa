@@ -50,9 +50,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6843219, 0.9388552, -2.037
 mesh = SubResource("SphereMesh_cx5uc")
 material = SubResource("StandardMaterial3D_8e3g4")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.89531565, 0.4454323, 0, -0.4454323, 0.89531565, 0, 3.8995209, 5.5811143)
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.9434543, 0.33150256, 0, -0.33150256, 0.9434543, 0, 5.2911887, 7.9954176)
 
