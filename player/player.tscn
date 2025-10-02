@@ -14,6 +14,7 @@ albedo_color = Color(1, 0.5254902, 0.5176471, 1)
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rkbax"]
 
 [node name="Player" type="CharacterBody3D"]
+collision_mask = 6
 script = ExtResource("1_oul6g")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
