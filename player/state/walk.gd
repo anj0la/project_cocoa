@@ -5,7 +5,6 @@ class_name PlayerWalk
 @export var _camera_pivot: Node3D
 @export var move_speed: float
 
-
 func enter() -> void:
 	# play animation
 	pass
