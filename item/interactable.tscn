@@ -7,3 +7,4 @@
 script = ExtResource("1_hwnlf")
 
 [node name="Prompt" parent="." instance=ExtResource("1_ml0xv")]
+visible = false

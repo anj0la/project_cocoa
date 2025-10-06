@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://ck4qdbqnkqw7b"]
+[gd_scene load_steps=11 format=3 uid="uid://ck4qdbqnkqw7b"]
 
 [ext_resource type="Script" uid="uid://hbb40mwtcfa2" path="res://player/player.gd" id="1_oul6g"]
 [ext_resource type="Script" uid="uid://domb36ly5sks7" path="res://player/state/state.gd" id="2_yw30f"]
 [ext_resource type="Script" uid="uid://cme1tjxqq56o7" path="res://player/state/idle.gd" id="3_qjkh3"]
 [ext_resource type="Script" uid="uid://do3ti6fclws4t" path="res://player/state/walk.gd" id="4_g6k8r"]
 [ext_resource type="Script" uid="uid://b70fqnmhquddw" path="res://player/camera/pivot.gd" id="5_qjkh3"]
+[ext_resource type="Script" uid="uid://xxmnig23qayn" path="res://player/interaction/detection.gd" id="6_g6k8r"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kqu6x"]
 albedo_color = Color(1, 0.5254902, 0.5176471, 1)
@@ -12,6 +13,8 @@ albedo_color = Color(1, 0.5254902, 0.5176471, 1)
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_oul6g"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rkbax"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_boad6"]
 
 [node name="Player" type="CharacterBody3D"]
 collision_mask = 6
@@ -38,9 +41,22 @@ _camera_pivot = NodePath("../../CameraPivot")
 move_speed = 5.0
 
 [node name="CameraPivot" type="Node3D" parent="."]
+process_physics_priority = 1
 script = ExtResource("5_qjkh3")
 
 [node name="SpringArm3D" type="SpringArm3D" parent="CameraPivot"]
 spring_length = 3.0
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot/SpringArm3D"]
+
+[node name="Detection" type="Area3D" parent="." node_paths=PackedStringArray("_camera")]
+collision_mask = 6
+script = ExtResource("6_g6k8r")
+_camera = NodePath("../CameraPivot/SpringArm3D/Camera3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Detection"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_boad6")
+
+[connection signal="body_entered" from="Detection" to="Detection" method="_on_body_entered"]
+[connection signal="body_exited" from="Detection" to="Detection" method="_on_body_exited"]

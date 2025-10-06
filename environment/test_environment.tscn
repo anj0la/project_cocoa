@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://bq77mh1ih084o"]
+[gd_scene load_steps=9 format=3 uid="uid://bq77mh1ih084o"]
 
 [ext_resource type="PackedScene" uid="uid://ck4qdbqnkqw7b" path="res://player/player.tscn" id="1_sbe2a"]
+[ext_resource type="PackedScene" uid="uid://cq82mipvrber4" path="res://item/forageables/square.tscn" id="2_te7dq"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_hcnc0"]
 
@@ -72,3 +73,6 @@ transform = Transform3D(1, 0, 0, 0, 0.9434543, 0.33150256, 0, -0.33150256, 0.943
 
 [node name="Player" parent="." instance=ExtResource("1_sbe2a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+
+[node name="Square" parent="." instance=ExtResource("2_te7dq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.1167154, 1.0326251, 4.454488)

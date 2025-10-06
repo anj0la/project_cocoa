@@ -1,5 +1,7 @@
 extends Node
 
+signal respawned
+
 @export var respawn_time: float = 1.0
 @export var _interactable: Interactable
 
@@ -19,4 +21,5 @@ func start_respawn() -> void:
 func _on_respawn_timeout() -> void:
 	_timer.stop()  # Stop the timer.
 	_interactable.show()
+	respawned.emit()
 	

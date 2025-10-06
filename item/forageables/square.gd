@@ -1,4 +1,4 @@
-extends Node3D
+extends StaticBody3D
 
 signal item_collected(data: ItemData)
 
@@ -15,3 +15,9 @@ func on_interact() -> void:
 	var data: ItemData = _collectable.collect()
 	_respawnable.start_respawn()
 	item_collected.emit(data)
+
+func on_deinteract() -> void:
+	pass
+
+func _on_respawnable_respawned() -> void:
+	_interactable.gain_focus()

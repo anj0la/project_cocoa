@@ -14,6 +14,9 @@ func exit() -> void:
 	pass
 	
 func update(_delta: float) -> void:
+	pass
+	
+func physics_update(_delta: float) -> void:
 	var input_dir := Input.get_vector("move_left", "move_right",  "move_forward", "move_backward")
 	var direction := (_player.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized() # transforms 2D input into 3D vector
 	if direction:
@@ -33,6 +36,3 @@ func update(_delta: float) -> void:
 		transitioned.emit(self, "idle") # walk -> idle
 
 	_player.move_and_slide()
-	
-func physics_update(_delta: float) -> void:
-	pass

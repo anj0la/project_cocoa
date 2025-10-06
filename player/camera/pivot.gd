@@ -8,28 +8,57 @@ extends Node3D
 
 @onready var _spring_arm : SpringArm3D = $SpringArm3D
 
+var _mouse_delta: Vector2 = Vector2.ZERO
+
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
-func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
-		rotation.x -= event.relative.y * mouse_sensitivity
-		rotation.x = clampf(rotation.x, min_vertical_angle, max_vertical_angle)
+func _physics_process(_delta: float) -> void:
+	rotation.x -= _mouse_delta.y * mouse_sensitivity
+	rotation.x = clampf(rotation.x, min_vertical_angle, max_vertical_angle)
 		
-		rotation.y += -event.relative.x * mouse_sensitivity
-		rotation.y = wrapf(rotation.y, 0.0, TAU)
+	rotation.y += -_mouse_delta.x * mouse_sensitivity
+	rotation.y = wrapf(rotation.y, 0.0, TAU)
 		
 	# Zoom in/out
-	if event.is_action_pressed("zoom_in"):
+	if Input.is_action_pressed("zoom_in"):
 		_spring_arm.spring_length -= 1.0
 		_spring_arm.spring_length = clampf(_spring_arm.spring_length, min_zoom, max_zoom)
-	if event.is_action_pressed("zoom_out"):
+	if Input.is_action_pressed("zoom_out"):
 		_spring_arm.spring_length += 1.0
 		_spring_arm.spring_length = clampf(_spring_arm.spring_length, min_zoom, max_zoom)
-
+		
+	# Reset mouse delta for next iteration	
+	_mouse_delta = Vector2.ZERO
+	
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+		_mouse_delta += event.relative
+		
 	# Show / hide mouse -> if mouse is shown, STOP camera movement
 	if event.is_action_pressed("toggle_mouse_capture"):
 		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		else:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		
+		#rotation.x -= event.relative.y * mouse_sensitivity
+		#rotation.x = clampf(rotation.x, min_vertical_angle, max_vertical_angle)
+		#
+		#rotation.y += -event.relative.x * mouse_sensitivity
+		#rotation.y = wrapf(rotation.y, 0.0, TAU)
+		#
+	## Zoom in/out
+	#if event.is_action_pressed("zoom_in"):
+		#_spring_arm.spring_length -= 1.0
+		#_spring_arm.spring_length = clampf(_spring_arm.spring_length, min_zoom, max_zoom)
+	#if event.is_action_pressed("zoom_out"):
+		#_spring_arm.spring_length += 1.0
+		#_spring_arm.spring_length = clampf(_spring_arm.spring_length, min_zoom, max_zoom)
+#
+	## Show / hide mouse -> if mouse is shown, STOP camera movement
+	#if event.is_action_pressed("toggle_mouse_capture"):
+		#if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+			#Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		#else:
+			#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)

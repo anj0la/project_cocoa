@@ -7,16 +7,9 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[node name="Prompt" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Prompt" type="CanvasLayer"]
 
 [node name="Panel" type="Panel" parent="."]
-layout_mode = 0
 offset_right = 240.0
 offset_bottom = 60.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_w2cg5")
