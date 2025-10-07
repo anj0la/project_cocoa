@@ -2,8 +2,8 @@ extends MeshInstance3D
 class_name Interactable
 
 @export var _outline: MeshInstance3D
-@onready var prompt: CanvasLayer = $Prompt
-@onready var label: Label = $Prompt/Panel/Label
+@onready var prompt: Node3D = $Prompt
+@onready var label: Label = $Prompt/Sprite3D/SubViewport/Panel/Label
 
 var _camera: Camera3D
 
@@ -23,6 +23,8 @@ func on_deinteract() -> void:
 func gain_focus() -> void:
 	_outline.show()
 	prompt.show()
+	
+	print("outline is shown: ", _outline.visible)
 	
 func lose_focus() -> void:
 	_outline.hide()

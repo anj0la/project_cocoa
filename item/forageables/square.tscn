@@ -52,6 +52,6 @@ _interactable = NodePath("../Interactable")
 shape = SubResource("BoxShape3D_1hw0c")
 
 [node name="PromptMarker" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8150257, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12409234, 1.2384882, 0.011632264)
 
 [connection signal="respawned" from="Respawnable" to="." method="_on_respawnable_respawned"]

@@ -6,21 +6,33 @@ var _nearby_objects: Array[Node3D]
 var _closest_object: Node3D = null
 var _is_interacting: bool = false
 
+func _process(_delta: float) -> void:
+	if _closest_object:
+		_update_prompt_orientation()
+
 func _input(event: InputEvent) -> void:
 	if _is_interacting:
 		if event.is_action_pressed("interact") and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 			_closest_object.on_interact()
+			#_nearby_objects.erase(_closest_object)
+			#_closest_object = null
+			_update_closest_object()
 
 func _update_closest_object() -> void:
 	if _nearby_objects.size() > 0:
 		# Find the new closest object.
 		_closest_object = _get_closest_object()
 		
+		# For respawnable objects (the object will be hidden, so we force focus
+		
+			
 		if _closest_object.has_node("Interactable"):
 			var interactable: Interactable = _closest_object.get_node("Interactable")
 			interactable.gain_focus()
 			_update_prompt_position()
 			_is_interacting = true
+			
+		
 			
 		# Reset focus and run cleanup logic for all non-closest objects.
 		for object in _nearby_objects:
@@ -47,10 +59,21 @@ func _update_prompt_position() -> void:
 	if _closest_object:
 		var interactable: Interactable = _closest_object.get_node("Interactable")
 		var marker: Marker3D = _closest_object.get_node("PromptMarker")
-		var panel: Panel = interactable.prompt.get_node("Panel")
+		var prompt: Node3D = interactable.get_node("Prompt")
 		interactable.prompt.visible = not _camera.is_position_behind(interactable.global_transform.origin)
-		panel.position = _camera.unproject_position(marker.global_position)
-
+		prompt.global_position = marker.global_position
+		
+func _update_prompt_orientation() -> void:
+	if _closest_object:
+		var interactable: Interactable = _closest_object.get_node("Interactable")
+		var prompt: Node3D = interactable.get_node("Prompt")
+		interactable.prompt.visible = not _camera.is_position_behind(interactable.global_transform.origin)
+		var to_camera := Vector2(_camera.global_position.x - prompt.global_position.x, _camera.global_position.z - prompt.global_position.z)
+		var right_axis: = Vector2(_closest_object.global_transform.basis.z.x, _closest_object.global_transform.basis.z.z)
+		var side = to_camera.dot(right_axis)
+		var sprite: Sprite3D = prompt.get_node("Sprite3D")
+		sprite.flip_h = side < 0		
+		
 func _on_body_entered(body: Node3D) -> void:
 	print("body entered: ", body.name)
 	if body.has_node("Interactable"):

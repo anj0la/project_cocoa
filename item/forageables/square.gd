@@ -20,4 +20,4 @@ func on_deinteract() -> void:
 	pass
 
 func _on_respawnable_respawned() -> void:
-	_interactable.gain_focus()
+	pass

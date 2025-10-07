@@ -28,11 +28,11 @@ func physics_update(_delta: float) -> void:
 		
 		_player.velocity.x = move_dir.x * move_speed
 		_player.velocity.z = move_dir.z * move_speed
-		print("Player has moved in this direction: " + str(input_dir))
+		#print("Player has moved in this direction: " + str(input_dir))
 	else:
 		_player.velocity.x = move_toward(_player.velocity.x, 0, move_speed)
 		_player.velocity.z = move_toward(_player.velocity.z, 0, move_speed)
-		print("Player is moving from walk to idle.")
+		#print("Player is moving from walk to idle.")
 		transitioned.emit(self, "idle") # walk -> idle
 
 	_player.move_and_slide()
