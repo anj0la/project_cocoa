@@ -14,25 +14,18 @@ func _input(event: InputEvent) -> void:
 	if _is_interacting:
 		if event.is_action_pressed("interact") and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 			_closest_object.on_interact()
-			#_nearby_objects.erase(_closest_object)
-			#_closest_object = null
 			_update_closest_object()
 
 func _update_closest_object() -> void:
 	if _nearby_objects.size() > 0:
 		# Find the new closest object.
 		_closest_object = _get_closest_object()
-		
-		# For respawnable objects (the object will be hidden, so we force focus
-		
 			
 		if _closest_object.has_node("Interactable"):
 			var interactable: Interactable = _closest_object.get_node("Interactable")
 			interactable.gain_focus()
 			_update_prompt_position()
 			_is_interacting = true
-			
-		
 			
 		# Reset focus and run cleanup logic for all non-closest objects.
 		for object in _nearby_objects:
