@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://7qxopfv68sdb"]
+[gd_scene format=3 uid="uid://7qxopfv68sdb"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_w2cg5"]
 viewport_path = NodePath("Sprite3D/SubViewport")
@@ -10,21 +10,21 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[node name="Prompt" type="Node3D"]
+[node name="Prompt" type="Node3D" unique_id=1476093226]
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1637519780]
 texture = SubResource("ViewportTexture_w2cg5")
 
-[node name="SubViewport" type="SubViewport" parent="Sprite3D"]
+[node name="SubViewport" type="SubViewport" parent="Sprite3D" unique_id=71579847]
 transparent_bg = true
 size = Vector2i(200, 50)
 
-[node name="Panel" type="Panel" parent="Sprite3D/SubViewport"]
+[node name="Panel" type="Panel" parent="Sprite3D/SubViewport" unique_id=63308366]
 offset_right = 200.0
 offset_bottom = 50.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_w2cg5")
 
-[node name="Label" type="Label" parent="Sprite3D/SubViewport/Panel"]
+[node name="Label" type="Label" parent="Sprite3D/SubViewport/Panel" unique_id=197239447]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
