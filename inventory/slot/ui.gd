@@ -1,9 +1,8 @@
 extends PanelContainer
 
-signal pressed(slot_data: SlotData)
-signal right_clicked(slot_data: SlotData)
-signal drag_started(slot_data: SlotData)
-signal drag_ended(slot_data: SlotData)
+signal selected(slot_data: SlotData)
+signal split_stack(slot_data: SlotData)
+signal canceled(slot_data: SlotData)
 signal hovered(slot_data: SlotData)
 signal unhovered(slot_data: SlotData)
 
@@ -40,4 +39,9 @@ func _on_mouse_exited() -> void:
 	unhovered.emit(slot_data)
 	
 func _on_gui_input(event: InputEvent) -> void:
-	pass # Replace with function body.
+	if event.is_action_pressed('inventory_select'): # i.e., left mouse click, A on Switch 
+		selected.emit(slot_data)
+	elif event.is_action_pressed('inventory_split'): # i.e., shift + left mouse click, Y on switch
+		split_stack.emit(slot_data)
+	elif event.is_action_pressed('inventory_cancel'): # i.e., right mouse click, B on Switch
+		canceled.emit(slot_data)

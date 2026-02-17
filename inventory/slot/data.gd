@@ -13,7 +13,7 @@ func clear() -> void:
 	item = null
 	
 func can_merge_with(other: SlotData) -> bool:
-	return item == other.item and item.is_stackable and \
+	return item.id == other.item.id and item.is_stackable and \
 	(quantity + other.quantity < item.max_stack or other.quantity < item.max_stack)
 
 func merge_with(other: SlotData) -> void:

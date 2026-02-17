@@ -1,6 +1,7 @@
 extends Resource
 class_name ItemData
 
+@export var id: int
 @export var item_name: String
 @export_multiline var description: String
 @export var icon: AtlasTexture
