@@ -32,16 +32,16 @@ func highlight(on: bool) -> void:
 
 func _on_mouse_entered() -> void:
 	highlight(true)
-	hovered.emit(slot_data)
+	hovered.emit(slot_data.index)
 
 func _on_mouse_exited() -> void:
 	highlight(false)
-	unhovered.emit(slot_data)
+	unhovered.emit(slot_data.index)
 	
 func _on_gui_input(event: InputEvent) -> void:
 	if event.is_action_pressed('inventory_select'): # i.e., left mouse click, A on Switch 
-		selected.emit(slot_data)
-	elif event.is_action_pressed('inventory_split'): # i.e., shift + left mouse click, Y on switch
-		split_stack.emit(slot_data)
+		selected.emit(slot_data.index)
+	elif event.is_action_pressed('inventory_split'): # i.e., shift + left mouse click, Y on Switchh
+		split_stack.emit(slot_data.index)
 	elif event.is_action_pressed('inventory_cancel'): # i.e., right mouse click, B on Switch
-		canceled.emit(slot_data)
+		canceled.emit(slot_data.index)

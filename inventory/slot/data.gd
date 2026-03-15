@@ -1,6 +1,7 @@
 extends Resource
 class_name SlotData
 
+@export var index: int
 @export var item: ItemData
 @export var quantity: int = 1
 @export var metadata: Dictionary
