@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://tutdtfc8hebn"]
+
+[ext_resource type="Script" uid="uid://b4jeipq7giapj" path="res://item/data.gd" id="1_4n5y6"]
+[ext_resource type="Texture2D" uid="uid://m13ajg66ms1x" path="res://inventory/icons/square_icon.png" id="1_sby6f"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rrdn1"]
+atlas = ExtResource("1_sby6f")
+
+[resource]
+script = ExtResource("1_4n5y6")
+item_name = "Square"
+description = "A normal, looking square."
+icon = SubResource("AtlasTexture_rrdn1")
+metadata/_custom_type_script = "uid://b4jeipq7giapj"

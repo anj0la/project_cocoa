@@ -1,5 +1,7 @@
 extends Area3D
 
+signal inventory_toggle
+
 @export var _camera: Camera3D
 
 var _nearby_objects: Array[Node3D]
@@ -15,6 +17,10 @@ func _input(event: InputEvent) -> void:
 		if event.is_action_pressed("interact") and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 			_closest_object.on_interact()
 			_update_closest_object()
+			
+func _unhandled_input(_event: InputEvent) -> void:
+	if Input.is_action_just_pressed("inventory_toggle"):
+		inventory_toggle.emit()
 
 func _update_closest_object() -> void:
 	if _nearby_objects.size() > 0:

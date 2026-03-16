@@ -1,5 +1,10 @@
-extends Node
+extends Resource
 class_name ItemData
 
+@export var id: int
 @export var item_name: String
-@export var description: String
+@export_multiline var description: String
+@export var icon: AtlasTexture
+@export var world_scene: PackedScene
+@export var is_stackable: bool = true
+@export var max_stack: int = 99
