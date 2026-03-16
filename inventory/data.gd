@@ -3,18 +3,10 @@ class_name InventoryData
 
 @export var slots: Array[SlotData]
 @export var max_slots: int = 32
-
-func get_slot_by(index: int) -> SlotData:
-	var slot := slots[index]
-	if slot:
-		slots[index] = null
-		return slot
-		
-	return null # slot index not currently in the inventory
 	
 func set_slot(new_slot_data: SlotData, index: int) -> void:
 	new_slot_data.index = index
-	slots[index] = new_slot_data
+	new_slot_data.copy_into(slots[index])
 	
 func first_empty_slot() -> int:
 	for i in range(max_slots):
@@ -60,10 +52,10 @@ func remove_item(index: int, count: int = 1) -> void:
 func split_stack(index: int, amount: int) -> void:
 	var slot := slots[index]
 	
-	if slot.is_empty() or slot.quantity >= amount:
-		return # if empty or the quantity is more than the amount, stack can't be split
+	if slot.is_empty() or slot.quantity < amount:
+		return # if empty or the quantity is less than the amount, stack can't be split
 		
-	var new_slot := slot.copy() # copies info from slot to new one
+	var new_slot := slot.copy() # copy info from slot to new one
 	
 	new_slot.quantity = amount
 	slot.quantity -= amount
@@ -72,7 +64,6 @@ func split_stack(index: int, amount: int) -> void:
 		slot.clear()
 		
 	slots[first_empty_slot()] = new_slot
-	
 	
 func swap_slots(a: int, b: int) -> void:
 	var temp := slots[a]

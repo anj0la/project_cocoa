@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://ck4qdbqnkqw7b"]
+[gd_scene format=3 uid="uid://ck4qdbqnkqw7b"]
 
 [ext_resource type="Script" uid="uid://hbb40mwtcfa2" path="res://player/player.gd" id="1_oul6g"]
+[ext_resource type="Resource" uid="uid://djsh6e4gjir0e" path="res://player/test_inv.tres" id="2_boad6"]
 [ext_resource type="Script" uid="uid://domb36ly5sks7" path="res://player/state/state.gd" id="2_yw30f"]
 [ext_resource type="Script" uid="uid://cme1tjxqq56o7" path="res://player/state/idle.gd" id="3_qjkh3"]
 [ext_resource type="Script" uid="uid://do3ti6fclws4t" path="res://player/state/walk.gd" id="4_g6k8r"]
@@ -16,47 +17,49 @@ albedo_color = Color(1, 0.5254902, 0.5176471, 1)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_boad6"]
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" unique_id=1394638825]
 collision_mask = 6
 script = ExtResource("1_oul6g")
+inventory = ExtResource("2_boad6")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1108121311]
 material_override = SubResource("StandardMaterial3D_kqu6x")
 mesh = SubResource("CapsuleMesh_oul6g")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1335265108]
 shape = SubResource("CapsuleShape3D_rkbax")
 
-[node name="PlayerState" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+[node name="PlayerState" type="Node" parent="." unique_id=2132819795 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("2_yw30f")
 initial_state = NodePath("Idle")
 
-[node name="Idle" type="Node" parent="PlayerState"]
+[node name="Idle" type="Node" parent="PlayerState" unique_id=1580611578]
 script = ExtResource("3_qjkh3")
 
-[node name="Walk" type="Node" parent="PlayerState" node_paths=PackedStringArray("_player", "_camera_pivot")]
+[node name="Walk" type="Node" parent="PlayerState" unique_id=587451703 node_paths=PackedStringArray("_player", "_camera_pivot")]
 script = ExtResource("4_g6k8r")
 _player = NodePath("../..")
 _camera_pivot = NodePath("../../CameraPivot")
 move_speed = 5.0
 
-[node name="CameraPivot" type="Node3D" parent="."]
+[node name="CameraPivot" type="Node3D" parent="." unique_id=1842346228]
 process_physics_priority = 1
 script = ExtResource("5_qjkh3")
 
-[node name="SpringArm3D" type="SpringArm3D" parent="CameraPivot"]
+[node name="SpringArm3D" type="SpringArm3D" parent="CameraPivot" unique_id=242255645]
 spring_length = 3.0
 
-[node name="Camera3D" type="Camera3D" parent="CameraPivot/SpringArm3D"]
+[node name="Camera3D" type="Camera3D" parent="CameraPivot/SpringArm3D" unique_id=1053172577]
 
-[node name="Detection" type="Area3D" parent="." node_paths=PackedStringArray("_camera")]
+[node name="Detection" type="Area3D" parent="." unique_id=65395627 node_paths=PackedStringArray("_camera")]
 collision_mask = 6
 script = ExtResource("6_g6k8r")
 _camera = NodePath("../CameraPivot/SpringArm3D/Camera3D")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Detection"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Detection" unique_id=1445207067]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_boad6")
 
 [connection signal="body_entered" from="Detection" to="Detection" method="_on_body_entered"]
 [connection signal="body_exited" from="Detection" to="Detection" method="_on_body_exited"]
+[connection signal="inventory_toggle" from="Detection" to="." method="_on_detection_inventory_toggle"]

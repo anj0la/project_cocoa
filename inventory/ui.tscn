@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://dw1xmo8hymdwl"]
+
+[ext_resource type="StyleBox" uid="uid://digsks174dxym" path="res://inventory/slot/normal_style.tres" id="1_g3tyn"]
+[ext_resource type="Script" uid="uid://dnfyvyto8fy2h" path="res://inventory/ui.gd" id="2_h3ei7"]
+[ext_resource type="PackedScene" uid="uid://b5tm2ujb0t04h" path="res://inventory/slot/ui.tscn" id="3_5spd2"]
+
+[node name="InventoryUI" type="CanvasLayer" unique_id=244746815]
+script = ExtResource("2_h3ei7")
+
+[node name="GrabbedSlot" parent="." unique_id=565167012 instance=ExtResource("3_5spd2")]
+visible = false
+z_index = 1
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 65.0
+offset_bottom = 65.0
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=266250910]
+custom_minimum_size = Vector2(588, 300)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -294.0
+offset_top = -150.0
+offset_right = 294.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("1_g3tyn")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1519509517]
+layout_mode = 2
+mouse_filter = 0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/MarginContainer" unique_id=279690303]
+layout_mode = 2
+mouse_filter = 0
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+columns = 8

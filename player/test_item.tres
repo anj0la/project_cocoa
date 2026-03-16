@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://ddhy0wpak36am"]
+
+[ext_resource type="Texture2D" uid="uid://tssaxxbyg8xl" path="res://icon.svg" id="1_k1ygd"]
+[ext_resource type="Script" uid="uid://b4jeipq7giapj" path="res://item/data.gd" id="2_m2sfl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5lcfq"]
+atlas = ExtResource("1_k1ygd")
+
+[resource]
+script = ExtResource("2_m2sfl")
+item_name = "test"
+icon = SubResource("AtlasTexture_5lcfq")
+metadata/_custom_type_script = "uid://b4jeipq7giapj"
