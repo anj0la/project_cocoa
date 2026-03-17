@@ -1,11 +1,16 @@
 [gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://l28k3g5bwxc2"]
 
+[ext_resource type="Texture2D" uid="uid://calf5a66ali4j" path="res://sweetmaking/ingredients/icons/honey.png" id="1_abcmf"]
 [ext_resource type="Script" uid="uid://b4jeipq7giapj" path="res://item/data.gd" id="1_j3drp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pjgwe"]
+atlas = ExtResource("1_abcmf")
 
 [resource]
 script = ExtResource("1_j3drp")
 item_name = "Honey"
 description = "A natural sweetener with weight and character. Its golden richness lingers, carrying floral or earthy undertones that sugar cannot replicate."
+icon = SubResource("AtlasTexture_pjgwe")
 tags = {
 "flavour": ["syrupy", "rich"],
 "quality_score": 1

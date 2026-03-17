@@ -1,11 +1,16 @@
 [gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://b5a3hathn10ym"]
 
+[ext_resource type="Texture2D" uid="uid://d1n5swtrur7yv" path="res://sweetmaking/ingredients/icons/sugar.png" id="1_7mjyb"]
 [ext_resource type="Script" uid="uid://b4jeipq7giapj" path="res://item/data.gd" id="1_wemb4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bl0fp"]
+atlas = ExtResource("1_7mjyb")
 
 [resource]
 script = ExtResource("1_wemb4")
 item_name = "Sugar"
 description = "The foundation of sweetness. It brightens flavors, masks bitterness, and adds body. Ubiquitous, simple, and powerful."
+icon = SubResource("AtlasTexture_bl0fp")
 tags = {
 "flavour": ["sugary", "sweet"],
 "quality_score": 1

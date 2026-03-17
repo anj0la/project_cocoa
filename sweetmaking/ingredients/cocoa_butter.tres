@@ -1,11 +1,16 @@
 [gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://d1w63x66fnlsg"]
 
+[ext_resource type="Texture2D" uid="uid://b3jsoaiqlul03" path="res://sweetmaking/ingredients/icons/cream_cheese.png" id="1_g5ibb"]
 [ext_resource type="Script" uid="uid://b4jeipq7giapj" path="res://item/data.gd" id="1_nn45r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_14bqx"]
+atlas = ExtResource("1_g5ibb")
 
 [resource]
 script = ExtResource("1_nn45r")
 item_name = "Cocoa Butter"
 description = "A silky, fat-rich base that softens harsher flavors and gives confections a smooth, melt-in-the-mouth quality."
+icon = SubResource("AtlasTexture_14bqx")
 tags = {
 "flavour": ["mild", "creamy"],
 "quality_score": 1

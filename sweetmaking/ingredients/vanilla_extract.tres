@@ -1,11 +1,16 @@
 [gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://b0rk4v4uavy3g"]
 
+[ext_resource type="Texture2D" uid="uid://c4qtl3x5iqcxp" path="res://sweetmaking/ingredients/icons/vanilla_extract.png" id="1_nnoxp"]
 [ext_resource type="Script" uid="uid://b4jeipq7giapj" path="res://item/data.gd" id="1_oqfs2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ww727"]
+atlas = ExtResource("1_nnoxp")
 
 [resource]
 script = ExtResource("1_oqfs2")
 item_name = "Vanilla Extract"
 description = "Vanilla extract: A fragrant, aromatic liquid that enhances other flavors. It adds warmth and complexity while subtly smoothing sharp notes."
+icon = SubResource("AtlasTexture_ww727")
 tags = {
 "flavour": ["aromatic", "smooth"],
 "quality_score": 1

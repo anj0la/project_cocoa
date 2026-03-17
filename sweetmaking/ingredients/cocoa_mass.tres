@@ -1,11 +1,16 @@
 [gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dl8f3as7xdt0r"]
 
 [ext_resource type="Script" uid="uid://b4jeipq7giapj" path="res://item/data.gd" id="1_ovadv"]
+[ext_resource type="Texture2D" uid="uid://hpibaska5fvs" path="res://sweetmaking/ingredients/icons/cocoa_powder.png" id="1_pc2nv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55ido"]
+atlas = ExtResource("1_pc2nv")
 
 [resource]
 script = ExtResource("1_ovadv")
 item_name = "Cocoa Mass"
 description = "A dark, concentrated base of chocolate. It brings depth and intensity that dominates unless carefully balanced."
+icon = SubResource("AtlasTexture_55ido")
 tags = {
 "flavour": ["rich", "intense"],
 "quality_score": 1
