@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://2fxqe1qevfif"]
+
+[ext_resource type="Script" uid="uid://b4jeipq7giapj" path="res://item/data.gd" id="1_y8xh0"]
+
+[resource]
+script = ExtResource("1_y8xh0")
+item_name = "Water"
+description = "The most basic and universal medium. It carries flavors but contributes almost none of its own."
+tags = {
+"flavour": ["neutral", "tasteless"],
+"quality_score": 1
+}
+metadata/_custom_type_script = "uid://b4jeipq7giapj"

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dl8f3as7xdt0r"]
+
+[ext_resource type="Script" uid="uid://b4jeipq7giapj" path="res://item/data.gd" id="1_ovadv"]
+
+[resource]
+script = ExtResource("1_ovadv")
+item_name = "Cocoa Mass"
+description = "A dark, concentrated base of chocolate. It brings depth and intensity that dominates unless carefully balanced."
+tags = {
+"flavour": ["rich", "intense"],
+"quality_score": 1
+}
+metadata/_custom_type_script = "uid://b4jeipq7giapj"

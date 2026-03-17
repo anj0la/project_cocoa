@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://gaptltjsbolo"]
+
+[ext_resource type="Script" uid="uid://b4jeipq7giapj" path="res://item/data.gd" id="1_71is1"]
+
+[resource]
+script = ExtResource("1_71is1")
+item_name = "Gelatin"
+description = "A quiet transformer. Tasteless on its own, yet capable of turning liquid into springy, resilient textures that define candies."
+tags = {
+"flavour": ["neutral", "tasteless"],
+"quality_score": 1
+}
+metadata/_custom_type_script = "uid://b4jeipq7giapj"

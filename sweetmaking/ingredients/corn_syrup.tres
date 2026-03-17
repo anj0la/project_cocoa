@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://llkdqhw3ee6y"]
+
+[ext_resource type="Script" uid="uid://b4jeipq7giapj" path="res://item/data.gd" id="1_snaqb"]
+
+[resource]
+script = ExtResource("1_snaqb")
+item_name = "Corn Syrup"
+description = "A neutral stabilizer. It prevents crystallization and ensures smooth texture without drawing attention to itself."
+tags = {
+"flavour": ["mild", "neutral"],
+"quality_score": 1
+}
+metadata/_custom_type_script = "uid://b4jeipq7giapj"

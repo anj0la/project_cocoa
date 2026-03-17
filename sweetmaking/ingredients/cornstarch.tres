@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dagar7dtb026b"]
+
+[ext_resource type="Script" uid="uid://b4jeipq7giapj" path="res://item/data.gd" id="1_plcq8"]
+
+[resource]
+script = ExtResource("1_plcq8")
+item_name = "Cornstarch"
+description = "A bland but vital structural aid. It thickens and stabilizes, creating body while subtly muting flavors."
+tags = {
+"flavour": ["neutral", "powdery"],
+"quality_score": 1
+}
+metadata/_custom_type_script = "uid://b4jeipq7giapj"

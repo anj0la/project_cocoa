@@ -21,11 +21,12 @@ config/icon="res://icon.svg"
 [file_customization]
 
 folder_colors={
-"res://environment/": "pink",
+"res://environment/": "green",
 "res://inventory/": "yellow",
 "res://item/": "orange",
 "res://player/": "red",
-"res://state/": "blue"
+"res://state/": "blue",
+"res://sweetmaking/": "pink"
 }
 
 [input]

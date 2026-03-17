@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://l28k3g5bwxc2"]
+
+[ext_resource type="Script" uid="uid://b4jeipq7giapj" path="res://item/data.gd" id="1_j3drp"]
+
+[resource]
+script = ExtResource("1_j3drp")
+item_name = "Honey"
+description = "A natural sweetener with weight and character. Its golden richness lingers, carrying floral or earthy undertones that sugar cannot replicate."
+tags = {
+"flavour": ["syrupy", "rich"],
+"quality_score": 1
+}
+metadata/_custom_type_script = "uid://b4jeipq7giapj"

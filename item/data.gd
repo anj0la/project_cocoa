@@ -8,3 +8,11 @@ class_name ItemData
 @export var world_scene: PackedScene
 @export var is_stackable: bool = true
 @export var max_stack: int = 99
+@export var tags: Dictionary = {
+	"flavour": ["sweet", "creamy"],
+	"quality_score": 1
+}
+@export var metadata: Dictionary = {
+	"affinity": [],
+	"contrast": [],
+}

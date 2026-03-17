@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dp868suajvuba"]
+
+[ext_resource type="Script" uid="uid://b4jeipq7giapj" path="res://item/data.gd" id="1_unljo"]
+
+[resource]
+script = ExtResource("1_unljo")
+item_name = "Citric Acid"
+description = "A sharp, tangy powder that adds a bright, sour note to recipes. It helps balance sweetness and accentuate other flavours."
+tags = {
+"flavour": ["tangy", "sharp"],
+"quality_score": 1
+}
+metadata/_custom_type_script = "uid://b4jeipq7giapj"

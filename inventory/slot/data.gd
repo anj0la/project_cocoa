@@ -4,7 +4,6 @@ class_name SlotData
 @export var index: int
 @export var item: ItemData
 @export var quantity: int = 0
-@export var metadata: Dictionary
 
 func clear() -> void:
 	quantity = 0
@@ -43,11 +42,9 @@ func copy() -> SlotData:
 	new_slot.index = index
 	new_slot.item = item
 	new_slot.quantity = quantity
-	new_slot.metadata = metadata.duplicate(true)
 	return new_slot
 	
 func copy_into(target: SlotData) -> void:
 	target.index = index
 	target.item = item
 	target.quantity = quantity
-	target.metadata = metadata.duplicate(true)

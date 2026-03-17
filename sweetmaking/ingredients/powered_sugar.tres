@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bgeti8mt563fa"]
+
+[ext_resource type="Script" uid="uid://b4jeipq7giapj" path="res://item/data.gd" id="1_wtx8n"]
+
+[resource]
+script = ExtResource("1_wtx8n")
+item_name = "Powdererd Sugar"
+description = "Soft and airy, dissolving instantly. Unlike granulated sugar, it gives a fine, velvety sweetness, though with a faint chalky edge."
+tags = {
+"flavour": ["sweet", "starchy"],
+"quality_score": 1
+}
+metadata/_custom_type_script = "uid://b4jeipq7giapj"

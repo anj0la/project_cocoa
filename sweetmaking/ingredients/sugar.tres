@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://b5a3hathn10ym"]
+
+[ext_resource type="Script" uid="uid://b4jeipq7giapj" path="res://item/data.gd" id="1_wemb4"]
+
+[resource]
+script = ExtResource("1_wemb4")
+item_name = "Sugar"
+description = "The foundation of sweetness. It brightens flavors, masks bitterness, and adds body. Ubiquitous, simple, and powerful."
+tags = {
+"flavour": ["sugary", "sweet"],
+"quality_score": 1
+}
+metadata/_custom_type_script = "uid://b4jeipq7giapj"
