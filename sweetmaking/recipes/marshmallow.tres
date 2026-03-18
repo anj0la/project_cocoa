@@ -17,15 +17,12 @@ category = 2
 required_ingredients = Array[ExtResource("1_dxvuo")]([ExtResource("2_tg8j6"), ExtResource("3_k7ack"), ExtResource("4_aporr"), ExtResource("5_b2ypi"), ExtResource("6_f3186")])
 optional_ingredients = Array[ExtResource("1_dxvuo")]([ExtResource("2_k7ack")])
 result_item = ExtResource("8_aporr")
-required_modifiers = Array[Dictionary]([{
+required_modifiers = {
+"aerate": 5,
+"caramelize": 0,
+"chill": 0,
 "temper": 0
-}, {
-"chill": 0
-}, {
-"caramelize": 0
-}, {
-"aerate": 5
-}])
+}
 tags = {
 "flavour": ["fluffy", "mellow"],
 "quality_score": 1,

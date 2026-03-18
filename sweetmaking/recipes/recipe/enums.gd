@@ -6,3 +6,11 @@ enum Category {
 	HARD_CANDY,
 	CHEWY_CANDY
 }
+
+enum Step {
+	INGREDIENT,
+	MODIFIER,
+	DECORATION,
+	BOXING,
+	DONE
+}

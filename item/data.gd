@@ -10,6 +10,6 @@ class_name ItemData
 @export var max_stack: int = 99
 @export var tags: Dictionary = {
 	"flavour": ["sweet", "creamy"],
-	"quality_score": 1
+	"quality_score": 1.0
 }
 @export var metadata: Dictionary = {} # Add affinity and contrast later
