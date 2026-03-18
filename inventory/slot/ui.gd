@@ -63,12 +63,9 @@ func _on_mouse_exited() -> void:
 	highlight(false)
 	
 func _on_gui_input(event: InputEvent) -> void:
-	if event.is_action_pressed('inventory_split'): # i.e., shift + left mouse click, Y on Switchh
-		print('split stack')
+	if event.is_action_pressed("inventory_split"): # i.e., shift + left mouse click, Y on Switchh
 		split_stack.emit(slot_data.index)
-	elif event.is_action_pressed('inventory_select'): # i.e., left mouse click, A on Switch 
-		print('selected')
+	elif event.is_action_pressed("inventory_select"): # i.e., left mouse click, A on Switch 
 		selected.emit(slot_data.index)
-	elif event.is_action_pressed('inventory_cancel'): # i.e., right mouse click, B on Switch
-		print('canceled')
+	elif event.is_action_pressed("inventory_cancel"): # i.e., right mouse click, B on Switch
 		canceled.emit(slot_data.index)

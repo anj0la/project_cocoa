@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="RecipeData" format=3 uid="uid://l5h4b04etlb2"]
+
+[ext_resource type="Script" uid="uid://b4jeipq7giapj" path="res://item/data.gd" id="1_dxvuo"]
+[ext_resource type="Script" uid="uid://ci26wuaaivcpe" path="res://sweetmaking/recipes/recipe/data.gd" id="2_1dwgy"]
+[ext_resource type="Resource" uid="uid://b0rk4v4uavy3g" path="res://sweetmaking/ingredients/vanilla_extract.tres" id="2_k7ack"]
+[ext_resource type="Resource" uid="uid://gaptltjsbolo" path="res://sweetmaking/ingredients/gelatin.tres" id="2_tg8j6"]
+[ext_resource type="Resource" uid="uid://dagar7dtb026b" path="res://sweetmaking/ingredients/cornstarch.tres" id="3_k7ack"]
+[ext_resource type="Resource" uid="uid://bgeti8mt563fa" path="res://sweetmaking/ingredients/powered_sugar.tres" id="4_aporr"]
+[ext_resource type="Resource" uid="uid://llkdqhw3ee6y" path="res://sweetmaking/ingredients/corn_syrup.tres" id="5_b2ypi"]
+[ext_resource type="Resource" uid="uid://2fxqe1qevfif" path="res://sweetmaking/ingredients/water.tres" id="6_f3186"]
+[ext_resource type="Resource" uid="uid://cqtsocpvrhvje" path="res://sweetmaking/finished_confections/marshmallow.tres" id="8_aporr"]
+
+[resource]
+script = ExtResource("2_1dwgy")
+name = "Marshmallow"
+category = 2
+required_ingredients = Array[ExtResource("1_dxvuo")]([ExtResource("2_tg8j6"), ExtResource("3_k7ack"), ExtResource("4_aporr"), ExtResource("5_b2ypi"), ExtResource("6_f3186")])
+optional_ingredients = Array[ExtResource("1_dxvuo")]([ExtResource("2_k7ack")])
+result_item = ExtResource("8_aporr")
+required_modifiers = Array[Dictionary]([{
+"temper": 0
+}, {
+"chill": 0
+}, {
+"caramelize": 0
+}, {
+"aerate": 5
+}])
+tags = {
+"flavour": ["fluffy", "mellow"],
+"quality_score": 1,
+"style": ["soft", "cozy"]
+}
+metadata/_custom_type_script = "uid://ci26wuaaivcpe"

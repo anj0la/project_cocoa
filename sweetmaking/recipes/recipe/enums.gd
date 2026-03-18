@@ -6,10 +6,3 @@ enum Category {
 	HARD_CANDY,
 	CHEWY_CANDY
 }
-
-enum Modifiers {
-	TEMPER,
-	CHILL,
-	CARAMELIZE,
-	AERATE
-}

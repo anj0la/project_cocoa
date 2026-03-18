@@ -12,7 +12,4 @@ class_name ItemData
 	"flavour": ["sweet", "creamy"],
 	"quality_score": 1
 }
-@export var metadata: Dictionary = {
-	"affinity": [],
-	"contrast": [],
-}
+@export var metadata: Dictionary = {} # Add affinity and contrast later

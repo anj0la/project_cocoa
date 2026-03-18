@@ -7,10 +7,10 @@ class_name RecipeData
 @export var optional_ingredients: Array[ItemData]
 @export var result_item: ItemData
 @export var required_modifiers: Array[Dictionary] = [
-	{RecipeEnums.Modifiers.TEMPER: 0},
-	{RecipeEnums.Modifiers.CHILL: 0},
-	{RecipeEnums.Modifiers.CARAMELIZE: 0},
-	{RecipeEnums.Modifiers.AERATE: 0},
+	{"temper": 0},
+	{"chill": 0},
+	{"caramelize": 0},
+	{"aerate": 0},
 ]
 @export var tags: Dictionary = {
 	"flavour": ["sweet", "creamy"],
