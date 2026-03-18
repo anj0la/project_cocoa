@@ -4,7 +4,7 @@ class_name RecipeSession
 signal ingredient_added(ingredient: ItemData, required: bool)
 signal wrong_ingredient(ingredient: ItemData)
 signal modifier_applied(modifier_type: String, player_value: int)
-signal step_completed(step)
+signal step_completed(step: RecipeEnums.Step)
 signal recipe_finished(finished_confection: ItemData)
 
 var current_recipe: RecipeData
