@@ -26,6 +26,26 @@ func start_session(recipe: RecipeData) -> void:
 	session_started.emit(recipe)
 	session_active = true
 	
+	print("recipe connected to active session: " + active_session.current_recipe.name)
+	print("current step: " + str(active_session.current_step))
+	print("session_active: " + str(session_active))
+	
+func add_ingredient(ingredient: ItemData) -> void:
+	if session_active:
+		active_session.add_ingredient(ingredient)
+
+func apply_modifier(modifier_type: String, player_value: int) -> void:
+	if session_active:
+		active_session.apply_modifier(modifier_type, player_value)
+		
+func add_decoration() -> void:
+	if session_active:
+		active_session.add_decoration()
+		
+func add_boxing() -> void:
+	if session_active:
+		active_session.add_boxing()		
+	
 func clear_session() -> void:
 	active_session = null
 	session_active = false
@@ -46,6 +66,7 @@ func _on_step_completed(step: RecipeEnums.Step) -> void:
 	step_completed.emit(step) # propagage signal further up
 	
 func _on_recipe_finished(finished_confection: ItemData) -> void:
+	print("we have now finished the recipe")
 	recipe_finished.emit(finished_confection)
 	clear_session()
 	

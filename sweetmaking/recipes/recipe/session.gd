@@ -52,6 +52,8 @@ func apply_modifier(modifier_type: String, player_value: int) -> void:
 			else:
 				quality_score *= 0.9
 				
+			modifier_applied.emit(modifier_type, player_value)
+				
 		# check for completion
 		if check_completion():
 			advance_step(RecipeEnums.Step.DECORATION)
@@ -67,6 +69,8 @@ func add_boxing() -> void:
 func advance_step(new_step: RecipeEnums.Step) -> void:
 	current_step = new_step
 	step_completed.emit(new_step)
+	if current_step == RecipeEnums.Step.DONE:
+		_create_final_output()
 	
 func check_completion() -> bool:
 	if current_step == RecipeEnums.Step.INGREDIENT:
@@ -79,8 +83,9 @@ func check_completion() -> bool:
 		return _check_boxing_completion()	
 	return false
 	
-func create_final_output() -> void:
+func _create_final_output() -> void:
 	if current_step == RecipeEnums.Step.DONE:
+		current_recipe.result_item.tags["quality_score"] = quality_score
 		recipe_finished.emit(current_recipe.result_item)
 
 func _init_modifiers(recipe: RecipeData) -> Dictionary:

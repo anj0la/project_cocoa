@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://dw1xmo8hymdwl" path="res://inventory/ui.tscn" id="3_grcvq"]
 [ext_resource type="Resource" uid="uid://7jx2jvb3dj84" path="res://player/test_inv_without_items.tres" id="3_ro0bp"]
 [ext_resource type="PackedScene" uid="uid://b5tm2ujb0t04h" path="res://inventory/slot/ui.tscn" id="4_nwtd5"]
+[ext_resource type="PackedScene" uid="uid://jnuxhgxnwcoo" path="res://sweetmaking/stations/mixing_station.tscn" id="7_l4l8j"]
+[ext_resource type="Resource" uid="uid://bahxaf2vbvey4" path="res://sweetmaking/recipes/lollipop.tres" id="8_hynum"]
+[ext_resource type="Script" uid="uid://08uhjy4gbrsy" path="res://sweetmaking/recipes/recipe/session_manager.gd" id="9_hynum"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_hcnc0"]
 
@@ -87,5 +90,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.1167154, 1.0326251, 4.4544
 visible = false
 slot_scene = ExtResource("4_nwtd5")
 
+[node name="MixingStation" parent="." unique_id=1856383473 instance=ExtResource("7_l4l8j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9593822, -3.977302)
+test_recipe = ExtResource("8_hynum")
+
+[node name="RecipeSessionManager" type="Node" parent="." unique_id=1658722684]
+script = ExtResource("9_hynum")
+
 [connection signal="inventory_toggle" from="Player" to="." method="_on_player_inventory_toggle"]
 [connection signal="item_collected" from="Square" to="." method="_on_square_item_collected"]
+[connection signal="ingredient_added" from="RecipeSessionManager" to="." method="_on_recipe_session_manager_ingredient_added"]
+[connection signal="modifier_applied" from="RecipeSessionManager" to="." method="_on_recipe_session_manager_modifier_applied"]
+[connection signal="recipe_finished" from="RecipeSessionManager" to="." method="_on_recipe_session_manager_recipe_finished"]
+[connection signal="session_started" from="RecipeSessionManager" to="." method="_on_recipe_session_manager_session_started"]
+[connection signal="step_completed" from="RecipeSessionManager" to="." method="_on_recipe_session_manager_step_completed"]
+[connection signal="wrong_ingredient" from="RecipeSessionManager" to="." method="_on_recipe_session_manager_wrong_ingredient"]
