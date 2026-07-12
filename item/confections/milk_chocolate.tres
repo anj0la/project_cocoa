@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dncg8d8p4aova"]
+
+[ext_resource type="Script" uid="uid://b4jeipq7giapj" path="res://item/data.gd" id="1_d2ymk"]
+[ext_resource type="Texture2D" uid="uid://bn7kxmkda2waq" path="res://item/ingredients/icons/chocolate.png" id="1_wqox5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c32ka"]
+atlas = ExtResource("1_wqox5")
+
+[resource]
+script = ExtResource("1_d2ymk")
+item_name = "Milk Chocolate"
+description = "A creamy, smooth milk chocolate bar."
+icon = SubResource("AtlasTexture_c32ka")
+tags = {
+"flavour": ["sweet", "creamy"],
+"quality_score": 1,
+"style": ["classic", "nostalgic"]
+}
+metadata/_custom_type_script = "uid://b4jeipq7giapj"

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dagar7dtb026b"]
+
+[ext_resource type="Texture2D" uid="uid://u451pyw0yi0n" path="res://item/ingredients/icons/pngtree-bag-of-corn-flour-with-vector-illustration-png-image_6121907.png" id="1_7wulo"]
+[ext_resource type="Script" uid="uid://b4jeipq7giapj" path="res://item/data.gd" id="1_plcq8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjxgu"]
+atlas = ExtResource("1_7wulo")
+
+[resource]
+script = ExtResource("1_plcq8")
+item_name = "Cornstarch"
+description = "A bland but vital structural aid. It thickens and stabilizes, creating body while subtly muting flavors."
+icon = SubResource("AtlasTexture_fjxgu")
+tags = {
+"flavour": ["neutral", "powdery"],
+"quality_score": 1
+}
+metadata/_custom_type_script = "uid://b4jeipq7giapj"

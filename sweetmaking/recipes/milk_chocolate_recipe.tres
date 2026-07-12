@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="RecipeData" format=3 uid="uid://8tnfqd61ingg"]
+
+[ext_resource type="Script" uid="uid://b4jeipq7giapj" path="res://item/data.gd" id="1_gkgkk"]
+[ext_resource type="Resource" uid="uid://d1w63x66fnlsg" path="res://item/ingredients/cocoa_butter.tres" id="2_h01l7"]
+[ext_resource type="Script" uid="uid://ci26wuaaivcpe" path="res://sweetmaking/recipes/data.gd" id="2_l3jxu"]
+[ext_resource type="Resource" uid="uid://b0rk4v4uavy3g" path="res://item/ingredients/vanilla_extract.tres" id="2_ltl2c"]
+[ext_resource type="Resource" uid="uid://dl8f3as7xdt0r" path="res://item/ingredients/cocoa_mass.tres" id="3_ltl2c"]
+[ext_resource type="Resource" uid="uid://b5a3hathn10ym" path="res://item/ingredients/sugar.tres" id="4_qlhcj"]
+[ext_resource type="Resource" uid="uid://c1c85qvgb06w2" path="res://item/ingredients/milk_powder.tres" id="5_6oy2e"]
+[ext_resource type="Resource" uid="uid://dncg8d8p4aova" path="res://item/confections/milk_chocolate.tres" id="7_qlhcj"]
+
+[resource]
+script = ExtResource("2_l3jxu")
+name = "Milk Chocolate"
+required_ingredients = Array[ExtResource("1_gkgkk")]([ExtResource("2_h01l7"), ExtResource("3_ltl2c"), ExtResource("4_qlhcj"), ExtResource("5_6oy2e")])
+optional_ingredients = Array[ExtResource("1_gkgkk")]([ExtResource("2_ltl2c")])
+result_item = ExtResource("7_qlhcj")
+required_modifiers = {
+"aerate": 0,
+"caramelize": 0,
+"chill": 0,
+"temper": 5
+}
+metadata/_custom_type_script = "uid://ci26wuaaivcpe"

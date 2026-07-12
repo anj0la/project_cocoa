@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://bf1k0icvu1cjg"]
+
+[ext_resource type="StyleBox" uid="uid://digsks174dxym" path="res://inventory/slot/normal_style.tres" id="1_hwwlv"]
+[ext_resource type="Script" uid="uid://00j20y3gp5cn" path="res://ui/selectable/grid_ui.gd" id="1_qg0ss"]
+
+[node name="SelectableGridUI" type="Control" unique_id=1775435261]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qg0ss")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=698114942]
+custom_minimum_size = Vector2(588, 300)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -294.0
+offset_top = -150.0
+offset_right = 294.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("1_hwwlv")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1816216004]
+layout_mode = 2
+mouse_filter = 0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/MarginContainer" unique_id=2000996726]
+layout_mode = 2
+mouse_filter = 0
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+columns = 8

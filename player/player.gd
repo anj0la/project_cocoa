@@ -6,7 +6,7 @@ signal inventory_toggle
 @export var inventory: InventoryData
 
 func _on_ready() -> void:
-	if not inventory:
+	if not inventory: # only create new inventory on first instance
 		inventory = InventoryData.new()
 		inventory.max_slots = 32
 		inventory.slots = []
@@ -18,6 +18,5 @@ func _on_ready() -> void:
 			
 		print("player inventory: ", inventory)
 
-# inventory action was detected, send signal to main scene to either open or close the inventory
 func _on_detection_inventory_toggle() -> void:
 	inventory_toggle.emit()

@@ -7,8 +7,8 @@
 [ext_resource type="Resource" uid="uid://7jx2jvb3dj84" path="res://player/test_inv_without_items.tres" id="3_ro0bp"]
 [ext_resource type="PackedScene" uid="uid://b5tm2ujb0t04h" path="res://inventory/slot/ui.tscn" id="4_nwtd5"]
 [ext_resource type="PackedScene" uid="uid://jnuxhgxnwcoo" path="res://sweetmaking/stations/mixing_station.tscn" id="7_l4l8j"]
-[ext_resource type="Resource" uid="uid://bahxaf2vbvey4" path="res://sweetmaking/recipes/lollipop.tres" id="8_hynum"]
-[ext_resource type="Script" uid="uid://08uhjy4gbrsy" path="res://sweetmaking/recipes/recipe/session_manager.gd" id="9_hynum"]
+[ext_resource type="Resource" uid="uid://bahxaf2vbvey4" path="res://sweetmaking/recipes/lollipop_recipe.tres" id="8_hynum"]
+[ext_resource type="Script" uid="uid://08uhjy4gbrsy" path="res://sweetmaking/mode/recipe/recipe_session_manager.gd" id="9_hynum"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_hcnc0"]
 
@@ -86,16 +86,18 @@ inventory = ExtResource("3_ro0bp")
 [node name="Square" parent="." unique_id=239622684 instance=ExtResource("2_te7dq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.1167154, 1.0326251, 4.454488)
 
-[node name="PlayerInventory" parent="." unique_id=722886767 instance=ExtResource("3_grcvq")]
-visible = false
-slot_scene = ExtResource("4_nwtd5")
-
 [node name="MixingStation" parent="." unique_id=1856383473 instance=ExtResource("7_l4l8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9593822, -3.977302)
 test_recipe = ExtResource("8_hynum")
 
 [node name="RecipeSessionManager" type="Node" parent="." unique_id=1658722684]
 script = ExtResource("9_hynum")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=23111183]
+
+[node name="PlayerInventory" parent="UI" unique_id=722886767 instance=ExtResource("3_grcvq")]
+visible = false
+slot_scene = ExtResource("4_nwtd5")
 
 [connection signal="inventory_toggle" from="Player" to="." method="_on_player_inventory_toggle"]
 [connection signal="item_collected" from="Square" to="." method="_on_square_item_collected"]

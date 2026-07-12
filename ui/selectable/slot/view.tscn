@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://d3n5xrqnlj47t"]
+
+[ext_resource type="StyleBox" uid="uid://digsks174dxym" path="res://inventory/slot/normal_style.tres" id="1_1gf7u"]
+[ext_resource type="Script" uid="uid://d30sd6desgred" path="res://ui/selectable/slot/view.gd" id="2_wf13c"]
+[ext_resource type="Texture2D" uid="uid://tssaxxbyg8xl" path="res://icon.svg" id="2_xdkqa"]
+
+[node name="SlotView" type="PanelContainer" unique_id=1904230475]
+custom_minimum_size = Vector2(64, 64)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1088.0
+offset_bottom = -584.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("1_1gf7u")
+script = ExtResource("2_wf13c")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2062920963]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer" unique_id=1787858867]
+visible = false
+layout_mode = 2
+texture = ExtResource("2_xdkqa")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MarginContainer" unique_id=2059957955]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 14
+text = "99"

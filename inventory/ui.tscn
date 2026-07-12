@@ -4,12 +4,15 @@
 [ext_resource type="Script" uid="uid://dnfyvyto8fy2h" path="res://inventory/ui.gd" id="2_h3ei7"]
 [ext_resource type="PackedScene" uid="uid://b5tm2ujb0t04h" path="res://inventory/slot/ui.tscn" id="3_5spd2"]
 
-[node name="InventoryUI" type="CanvasLayer" unique_id=244746815]
+[node name="InventoryUI" type="Control" unique_id=90877797]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("2_h3ei7")
 
 [node name="GrabbedSlot" parent="." unique_id=565167012 instance=ExtResource("3_5spd2")]
 visible = false
 z_index = 1
+layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -20,6 +23,7 @@ offset_bottom = 65.0
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=266250910]
 custom_minimum_size = Vector2(588, 300)
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5

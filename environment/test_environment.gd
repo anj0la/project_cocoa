@@ -1,6 +1,6 @@
 extends Node3D
 
-@onready var player_inv: InventoryUI = $PlayerInventory
+@onready var player_inv: InventoryUI = $UI/PlayerInventory
 @onready var player: Player = $Player
 @onready var mixing_station: StaticBody3D = $MixingStation
 @onready var recipe_manager: RecipeSessionManager = $RecipeSessionManager

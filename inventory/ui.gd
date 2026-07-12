@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Control
 class_name InventoryUI
 
 @export var inventory: InventoryData 
@@ -14,10 +14,7 @@ func _process(delta: float) -> void:
 	if grabbed_slot.visible:
 		# mouse
 		grabbed_slot.global_position = get_viewport().get_mouse_position()
-		# joystick overrides if being used (Note: implement joystick
-		#var stick = Input.get_vector("inventory_cursor_left", "inventory_cursor_right", "inventory_cursor_up", "inventory_cursor_down")
-		#if stick.length() > 0.1:  # deadzone
-			#grabbed_slot.global_position += stick * cursor_speed * delta
+		# TODO: Implement moving left, up, right and down with keyboard and joystick
 
 func init_inventory(inv: InventoryData) -> void:
 	inventory = inv
