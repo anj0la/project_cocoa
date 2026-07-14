@@ -1,15 +1,15 @@
 [gd_scene format=3 uid="uid://dw1xmo8hymdwl"]
 
-[ext_resource type="StyleBox" uid="uid://digsks174dxym" path="res://inventory/slot/normal_style.tres" id="1_g3tyn"]
-[ext_resource type="Script" uid="uid://dnfyvyto8fy2h" path="res://inventory/ui.gd" id="2_h3ei7"]
-[ext_resource type="PackedScene" uid="uid://b5tm2ujb0t04h" path="res://inventory/slot/ui.tscn" id="3_5spd2"]
+[ext_resource type="Script" uid="uid://dnfyvyto8fy2h" path="res://inventory/inventory_ui.gd" id="1_cedrj"]
+[ext_resource type="PackedScene" uid="uid://b5tm2ujb0t04h" path="res://inventory/slot/slot_ui.tscn" id="2_7rvkw"]
+[ext_resource type="StyleBox" uid="uid://digsks174dxym" path="res://inventory/slot/normal_style.tres" id="3_45d2x"]
 
 [node name="InventoryUI" type="Control" unique_id=90877797]
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("2_h3ei7")
+script = ExtResource("1_cedrj")
 
-[node name="GrabbedSlot" parent="." unique_id=565167012 instance=ExtResource("3_5spd2")]
+[node name="GrabbedSlot" parent="." unique_id=565167012 instance=ExtResource("2_7rvkw")]
 visible = false
 z_index = 1
 layout_mode = 0
@@ -20,6 +20,8 @@ offset_left = 1.0
 offset_top = 1.0
 offset_right = 65.0
 offset_bottom = 65.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=266250910]
 custom_minimum_size = Vector2(588, 300)
@@ -35,7 +37,7 @@ offset_right = 294.0
 offset_bottom = 150.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = ExtResource("1_g3tyn")
+theme_override_styles/panel = ExtResource("3_45d2x")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1519509517]
 layout_mode = 2

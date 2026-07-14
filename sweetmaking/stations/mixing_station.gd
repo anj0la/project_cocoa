@@ -12,6 +12,7 @@ func init_mixing_station(manager: RecipeSessionManager):
 		
 func on_interact() -> void:
 	_interactable.on_interact()
+	# _recipe_selection_ui.show() or something
 	_recipe_manager.start_session(test_recipe) # TODO: Change to a proper recipe selection
 	print("started recipe: " + test_recipe.name) # For now, we'll just use a test recipe
 

@@ -8,7 +8,6 @@ class_name InventoryUI
 @onready var grabbed_slot: SlotUI = $GrabbedSlot
 
 var held_slot_data: SlotData = null
-var slot_ui_list: Array[SlotUI] = [] # logical display
 
 func _process(delta: float) -> void:
 	if grabbed_slot.visible:
@@ -142,8 +141,8 @@ func _on_slot_canceled(index) -> void:
 	_refresh_slots()
 	_update_grabbed_slot_display()
 	
-func _on_slot_hovered(index) -> void:
-	inventory.slots[index].highlight(true)
-
-func _on_slot_unhovered(index) -> void:
-	inventory.slots[index].highlight(false)
+#func _on_slot_hovered(index) -> void:
+	#inventory.slots[index].highlight(true)
+#
+#func _on_slot_unhovered(index) -> void:
+	#inventory.slots[index].highlight(false)

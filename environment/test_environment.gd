@@ -5,10 +5,10 @@ extends Node3D
 @onready var mixing_station: StaticBody3D = $MixingStation
 @onready var recipe_manager: RecipeSessionManager = $RecipeSessionManager
 
-var water = preload("res://sweetmaking/ingredients/water.tres")
-var corn_syrup = preload("res://sweetmaking/ingredients/corn_syrup.tres")
-var sugar = preload("res://sweetmaking/ingredients/sugar.tres")
-var milk_powder = preload("res://sweetmaking/ingredients/milk_powder.tres")
+var water = preload("res://item/ingredients/water.tres")
+var corn_syrup = preload("res://item/ingredients/corn_syrup.tres")
+var sugar = preload("res://item/ingredients/sugar.tres")
+var milk_powder = preload("res://item/ingredients/milk_powder.tres")
 	
 func _ready():
 	# Populate player inventory with saved (or new) data

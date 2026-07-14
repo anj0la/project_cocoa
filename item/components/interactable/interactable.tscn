@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bll01q8vpdvcw"]
+
+[ext_resource type="Script" uid="uid://ck0kwosps15vm" path="res://item/components/interactable/interactable.gd" id="1_hwnlf"]
+[ext_resource type="PackedScene" uid="uid://7qxopfv68sdb" path="res://item/components/interactable/prompt.tscn" id="1_ml0xv"]
+
+[node name="Interactable" type="MeshInstance3D"]
+script = ExtResource("1_hwnlf")
+
+[node name="Prompt" parent="." instance=ExtResource("1_ml0xv")]
+visible = false

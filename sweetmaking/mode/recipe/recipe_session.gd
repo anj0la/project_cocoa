@@ -73,15 +73,18 @@ func advance_step(new_step: RecipeEnums.Step) -> void:
 		_create_final_output()
 	
 func check_completion() -> bool:
-	if current_step == RecipeEnums.Step.INGREDIENT:
-		return _check_ingredient_completion()
-	if current_step == RecipeEnums.Step.MODIFIER:
-		return _check_modifier_completion()
-	if current_step == RecipeEnums.Step.DECORATION:
-		return _check_decoration_completion()
-	if current_step == RecipeEnums.Step.BOXING:
-		return _check_boxing_completion()	
-	return false
+	match RecipeEnums.Step:
+		RecipeEnums.Step.INGREDIENT:
+			return _check_ingredient_completion()
+		RecipeEnums.Step.MODIFIER:
+			return _check_modifier_completion()
+		RecipeEnums.Step.DECORATION:
+			return _check_decoration_completion()
+		RecipeEnums.Step.BOXING:
+			return _check_boxing_completion()	
+		_:
+			return false
+
 	
 func _create_final_output() -> void:
 	if current_step == RecipeEnums.Step.DONE:
@@ -90,17 +93,21 @@ func _create_final_output() -> void:
 
 func _init_modifiers(recipe: RecipeData) -> Dictionary:
 	var modifiers = {}
+	var temper = recipe.required_modifiers["temper"]
+	var chill = recipe.required_modifiers["chill"]
+	var caramelize = recipe.required_modifiers["caramelize"]
+	var aerate = recipe.required_modifiers["aerate"]
 	
-	if recipe.required_modifiers["temper"] > 0:
+	if temper > 0:
 		modifiers["temper"] = { "required": current_recipe.required_modifiers["temper"], 
 		"result": null, "completed": false } 
-	if recipe.required_modifiers["chill"] > 0:
+	if chill > 0:
 		modifiers["chill"] = { "required": current_recipe.required_modifiers["chill"], 
 		"result": null, "completed": false } 
-	if recipe.required_modifiers["caramelize"] > 0:
+	if caramelize > 0:
 		modifiers["caramelize"] = { "required": current_recipe.required_modifiers["caramelize"],
 		 "result": null, "completed": false } 
-	if recipe.required_modifiers["aerate"] > 0:
+	if aerate > 0:
 		modifiers["aerate"] = { "required": current_recipe.required_modifiers["aerate"], 
 		"result": null, "completed": false } 
 		

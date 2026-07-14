@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://d0pj5fo3q3d3b"]
+
+[ext_resource type="PackedScene" uid="uid://bf1k0icvu1cjg" path="res://selectable_grid/ui.tscn" id="1_wxh31"]
+
+[node name="RecipeSelectionUI" type="Control" unique_id=694611717]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RecipeGrid" parent="." unique_id=1775435261 instance=ExtResource("1_wxh31")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5

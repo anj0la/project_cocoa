@@ -1,9 +1,9 @@
 [gd_scene format=4 uid="uid://cq82mipvrber4"]
 
 [ext_resource type="Script" uid="uid://bdxe7kcpodwwm" path="res://item/forageables/square.gd" id="1_1hw0c"]
-[ext_resource type="PackedScene" uid="uid://bll01q8vpdvcw" path="res://item/interactable.tscn" id="1_xypds"]
-[ext_resource type="Script" uid="uid://bm7biqf2hpbmk" path="res://item/collectable.gd" id="2_rshy2"]
-[ext_resource type="Script" uid="uid://c5acvwf60akx0" path="res://item/respawnable.gd" id="3_1hw0c"]
+[ext_resource type="PackedScene" uid="uid://bll01q8vpdvcw" path="res://item/components/interactable/interactable.tscn" id="1_xypds"]
+[ext_resource type="Script" uid="uid://bm7biqf2hpbmk" path="res://item/components/collectable.gd" id="2_rshy2"]
+[ext_resource type="Script" uid="uid://c5acvwf60akx0" path="res://item/components/respawnable.gd" id="3_1hw0c"]
 [ext_resource type="Resource" uid="uid://tutdtfc8hebn" path="res://item/forageables/sqaure_data.tres" id="4_t0s2q"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ap8nv"]

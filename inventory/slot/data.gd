@@ -48,3 +48,13 @@ func copy_into(target: SlotData) -> void:
 	target.index = index
 	target.item = item
 	target.quantity = quantity
+
+static func from_item(item_data: ItemData, item_quantity: int, item_index: int) -> SlotData:
+	var slot := SlotData.new()
+	slot.item = item_data
+	slot.quantity = item_quantity
+	slot.index = item_index
+	return slot
+
+static func from_recipe(recipe: RecipeData, item_index: int) -> SlotData:
+	return from_item(recipe.result_item, 1, item_index)

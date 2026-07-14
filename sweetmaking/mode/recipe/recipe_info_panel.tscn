@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://6y33skg463tl"]
+
+[ext_resource type="Texture2D" uid="uid://tssaxxbyg8xl" path="res://icon.svg" id="1_o4g1l"]
+[ext_resource type="PackedScene" uid="uid://d3n5xrqnlj47t" path="res://selectable_grid/slot/view.tscn" id="2_7j04h"]
+
+[node name="RecipeInfoPanel" type="PanelContainer" unique_id=1999982218]
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=925862822]
+layout_mode = 2
+
+[node name="Content" type="VBoxContainer" parent="MarginContainer" unique_id=305248984]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="RecipeName" type="Label" parent="MarginContainer/Content" unique_id=1430939264]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "ITEM NAME"
+horizontal_alignment = 1
+
+[node name="RecipeInfoContainer" type="HBoxContainer" parent="MarginContainer/Content" unique_id=1444869684]
+layout_mode = 2
+
+[node name="RecipeImage" type="TextureRect" parent="MarginContainer/Content/RecipeInfoContainer" unique_id=501640110]
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 2
+texture = ExtResource("1_o4g1l")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="InventoryAmount" type="Label" parent="MarginContainer/Content/RecipeInfoContainer" unique_id=525894502]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "# in inventory"
+
+[node name="RequiredIngredientsContainer" type="HBoxContainer" parent="MarginContainer/Content" unique_id=775603177]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="SlotView" parent="MarginContainer/Content/RequiredIngredientsContainer" unique_id=1904230475 instance=ExtResource("2_7j04h")]
+layout_mode = 2
+
+[node name="SlotView2" parent="MarginContainer/Content/RequiredIngredientsContainer" unique_id=1471849777 instance=ExtResource("2_7j04h")]
+layout_mode = 2
+
+[node name="SlotView3" parent="MarginContainer/Content/RequiredIngredientsContainer" unique_id=1959294957 instance=ExtResource("2_7j04h")]
+layout_mode = 2
+
+[node name="SlotView4" parent="MarginContainer/Content/RequiredIngredientsContainer" unique_id=142342979 instance=ExtResource("2_7j04h")]
+layout_mode = 2
+
+[node name="SlotView5" parent="MarginContainer/Content/RequiredIngredientsContainer" unique_id=2007262808 instance=ExtResource("2_7j04h")]
+layout_mode = 2
+
+[node name="SlotView6" parent="MarginContainer/Content/RequiredIngredientsContainer" unique_id=1126814091 instance=ExtResource("2_7j04h")]
+layout_mode = 2
+
+[node name="Description" type="Label" parent="MarginContainer/Content" unique_id=138824562]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "DESCRIPTION"
+
+[node name="PopularityContainer" type="HBoxContainer" parent="MarginContainer/Content" unique_id=1969041436]
+layout_mode = 2
+
+[node name="Popularity" type="Label" parent="MarginContainer/Content/PopularityContainer" unique_id=1571295188]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "POPULARITY"
+
+[node name="PopularityStatus" type="Label" parent="MarginContainer/Content/PopularityContainer" unique_id=570168725]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 24
+text = "HIGH"
+
+[node name="SeasonContainer" type="HBoxContainer" parent="MarginContainer/Content" unique_id=467121438]
+layout_mode = 2
+
+[node name="Season" type="Label" parent="MarginContainer/Content/SeasonContainer" unique_id=1060274219]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "SEASON"
+
+[node name="SeasonStatus" type="Label" parent="MarginContainer/Content/SeasonContainer" unique_id=2110186911]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 24
+text = "FALL"

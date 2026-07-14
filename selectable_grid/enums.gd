@@ -1,5 +1,5 @@
 extends Object
-class_name SelectableEnums
+class_name SelectableGridEnums
 
 enum SelectionMode {
 	SINGLE,
